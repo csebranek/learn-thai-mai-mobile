@@ -6,10 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import com.example.learn_thai_mai_mobile.MainActivity
 import com.example.learn_thai_mai_mobile.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+
+    val vm: HomeViewModel by viewModels()
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -22,17 +26,33 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
+
+
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        if (savedInstanceState != null) {
+            var someStateValue = savedInstanceState.getInt("theBoolean");
+            println("The saved val: ")
+            print(someStateValue)
+            // Do something with value if needed
+        }
 
         val textView: TextView = binding.textHome
+        val translatedWord: TextView = binding.wordToTranslate
         homeViewModel.text.observe(viewLifecycleOwner) {
             textView.text = it
         }
         return root
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putBoolean("theBoolean", true)
     }
 
     override fun onDestroyView() {
