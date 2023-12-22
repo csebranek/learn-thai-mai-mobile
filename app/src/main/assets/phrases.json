@@ -269,35 +269,35 @@
     "english": "chair",
     "thai": "เก้าอี้",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": false
   },
   {
     "english": "table",
     "thai": "โต๊ะ",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": false
   },
   {
     "english": "toilet",
     "thai": "ห้องน้ำ",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": false
   },
   {
     "english": "bottle",
     "thai": "ขวด",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": true
   },
   {
     "english": "baby bottle",
     "thai": "ขวดนม",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": true
   },
   {
@@ -325,7 +325,7 @@
     "english": "pen",
     "thai": "ปากกา",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": false
   },
   {
@@ -612,14 +612,14 @@
     "english": "spoon",
     "thai": "ช้อน",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": true
   },
   {
     "english": "fork",
     "thai": "ส้อม",
     "weak": 1,
-    "category": "object",
+    "category": "objects",
     "generate_sound_clip": true
   },
   {

@@ -1,12 +1,12 @@
 package com.example.learn_thai_mai_mobile
 
 import android.content.Context
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -14,11 +14,13 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.learn_thai_mai_mobile.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.File
 import java.io.IOException
 import kotlin.random.Random
 
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
 
 class MainActivity : AppCompatActivity() {
 
@@ -45,6 +47,8 @@ class MainActivity : AppCompatActivity() {
         if (jsonFileString != null) {
             val words: List<Word> = gson.fromJson(jsonFileString, listWordType)
             words.forEachIndexed { _, word ->
+                //val a : Category = enumValueOrNull(word.category)!!
+                //Category.values().find { it.name == word.category }
                 wordDictionary.add(word)
             }
         }
@@ -82,11 +86,16 @@ class MainActivity : AppCompatActivity() {
         inputTranslationBox = findViewById(R.id.inputTranslationBox)
     }
 
+
     fun buttonClick(view: View?) {
         val displayText: TextView = findViewById(R.id.SubmissionFeedback)
         displayText.text =
             if (currentWord.thai == inputTranslationBox.text.toString()) "Correct Answer!" else "Wrong Answer!"
         nextWord()
+    }
+
+    fun playThaiSound(view: View?) {
+        audioPlayer("sounds/".plus(currentWord.english).plus(".m4a"))
     }
 
     private fun nextWord() {
@@ -115,6 +124,19 @@ class MainActivity : AppCompatActivity() {
         }
         return jsonString
     }
+    fun audioPlayer(fileName: String) {
+        //set up MediaPlayer
+        val mp = MediaPlayer()
+        try {
+            val value = applicationContext . assets . openFd(fileName)
+            mp.setDataSource(value);
+            mp.prepare()
+            mp.start()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
 
 
 }
