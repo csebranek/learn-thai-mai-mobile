@@ -12,6 +12,4 @@ class HomeViewModel(private val state: SavedStateHandle) : ViewModel() {
     }
     val text: LiveData<String> = _text
 
-
-
 }

@@ -11,15 +11,13 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.learn_thai_mai_mobile.MainActivity
 import com.example.learn_thai_mai_mobile.databinding.FragmentHomeBinding
 
+
 class HomeFragment : Fragment() {
 
     val vm: HomeViewModel by viewModels()
 
     private var _binding: FragmentHomeBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,14 +25,11 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-
-
-
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
+        val root: View = _binding!!.root
         if (savedInstanceState != null) {
             var someStateValue = savedInstanceState.getInt("theBoolean");
             println("The saved val: ")
@@ -42,12 +37,22 @@ class HomeFragment : Fragment() {
             // Do something with value if needed
         }
 
-        val textView: TextView = binding.textHome
-        val translatedWord: TextView = binding.wordToTranslate
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
         return root
+    }
+    override fun onPause (){
+        super.onPause();
+        if (_binding?.wordToTranslate!!.text.toString() != ""){
+            MainActivity.setWord(_binding?.wordToTranslate!!.text.toString())
+        }
+    }
+
+    override fun onResume() {
+        super.onResume();
+        val translatedWord: TextView = _binding!!.wordToTranslate
+        vm.text.observe(viewLifecycleOwner) {
+           translatedWord.text = MainActivity.restoreWord()
+       }
+
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -59,4 +64,5 @@ class HomeFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

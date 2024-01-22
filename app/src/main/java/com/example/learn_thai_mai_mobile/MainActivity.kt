@@ -77,10 +77,13 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
 
         //TODO: navigating between views destroys the currentWord?
+        //for now using a companion object for this, since onSaveInstanceState() is not called
+        // when switching between fragments, but onPause() and onResume() are.
         //figure out fragment keeping state later
         //NavController.OnDestinationChangedListener(navController, )
 
         currentWordToTranslate = findViewById(R.id.wordToTranslate)
+        setWord(currentWord.english)
         translateBoxLabel = currentWordToTranslate.text.toString()
         currentWordToTranslate.text = translateBoxLabel.plus(currentWord.english)
         inputTranslationBox = findViewById(R.id.inputTranslationBox)
@@ -89,10 +92,13 @@ class MainActivity : AppCompatActivity() {
 
     fun buttonClick(view: View?) {
         val displayText: TextView = findViewById(R.id.SubmissionFeedback)
+        var currentDisplay: TextView = findViewById(R.id.wordToTranslate)
         displayText.text =
-            if (currentWord.thai == inputTranslationBox.text.toString()) "Correct Answer!" else "Wrong Answer!"
+            if (currentWord.thai == inputTranslationBox.text.toString()) "Correct Answer!" else "Wrong Answer!".plus(" Answer was: ").plus(currentWord.thai)
         nextWord()
+        currentDisplay.text = currentWord.english
     }
+
 
     fun playThaiSound(view: View?) {
         audioPlayer("sounds/".plus(currentWord.english).plus(".m4a"))
@@ -125,7 +131,6 @@ class MainActivity : AppCompatActivity() {
         return jsonString
     }
     fun audioPlayer(fileName: String) {
-        //set up MediaPlayer
         val mp = MediaPlayer()
         try {
             val value = applicationContext . assets . openFd(fileName)
@@ -137,6 +142,17 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    companion object {
+        private lateinit var savedWord: String
+
+        fun restoreWord(): String {
+            return savedWord;
+        }
+
+        fun setWord(_theWord: String) {
+            this.savedWord = _theWord
+        }
+    }
 
 
 }
