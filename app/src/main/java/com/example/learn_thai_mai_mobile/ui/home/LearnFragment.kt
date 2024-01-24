@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import com.example.learn_thai_mai_mobile.MainActivity
-import com.example.learn_thai_mai_mobile.databinding.FragmentHomeBinding
+import com.example.learn_thai_mai_mobile.databinding.FragmentLearnBinding
 
 
-class HomeFragment : Fragment() {
+class LearnFragment : Fragment() {
 
-    val vm: HomeViewModel by viewModels()
+    val vm: LearnViewModel by viewModels()
 
-    private var _binding: FragmentHomeBinding? = null
+    private var _binding: FragmentLearnBinding? = null
 
 
     override fun onCreateView(
@@ -26,9 +26,9 @@ class HomeFragment : Fragment() {
     ): View {
 
         val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+            ViewModelProvider(this).get(LearnViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentLearnBinding.inflate(inflater, container, false)
         val root: View = _binding!!.root
         if (savedInstanceState != null) {
             var someStateValue = savedInstanceState.getInt("theBoolean");
