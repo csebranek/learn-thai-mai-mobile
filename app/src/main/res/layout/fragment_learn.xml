@@ -12,22 +12,20 @@
         android:layout_height="66dp"
         android:onClick="buttonClick"
         android:text="@string/button_text"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/playThaiSound" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/playThaiSound"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_width="35dp"
+        android:layout_height="34dp"
+        android:layout_marginBottom="5dp"
         android:onClick="playThaiSound"
         android:src="@android:drawable/ic_lock_silent_mode_off"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/SubmissionFeedback" />
+        app:layout_constraintBottom_toTopOf="@+id/inputTranslationBox"
+        app:layout_constraintEnd_toEndOf="@+id/inputTranslationBox" />
 
     <TextView
         android:id="@+id/translateTextLabel"
@@ -59,9 +57,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:hint="hint"
+        android:hint="Enter answer here"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordToTranslate" />
@@ -80,9 +78,9 @@
         android:id="@+id/wordToTranslate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/playThaiSound"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/translateTextLabel" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_settings"
+            android:icon="@drawable/ic_settings_black_24dp"
+            android:title="@string/menu_settings" />
+        <item
+            android:id="@+id/navigation_learn"
+            android:icon="@drawable/ic_learn_black_24dp"
+            android:title="@string/menu_learn" />
+        <item
+            android:id="@+id/navigation_statistics"
+            android:icon="@drawable/ic_statistics_black_24dp"
+            android:title="@string/menu_statistics" />
+    </group>
+</menu>

@@ -5,4 +5,17 @@
     <string name="title_statistics">Statistics</string>
     <string name="button_text">Submit!</string>
     <string name="translateLabelText">Translate this:</string>
+
+    <string name="menu_settings">Settings</string>
+    <string name="menu_learn">Learn</string>
+    <string name="menu_statistics">Statistics</string>
+
+    <string name="nav_header_title">Learn Thai</string>
+    <string name="nav_header_subtitle">learn-thai@learn-thai.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+
+
 </resources>
