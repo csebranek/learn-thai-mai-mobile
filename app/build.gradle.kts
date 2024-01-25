@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.learn_thai_mai_mobile"
+    namespace = "com.csebranek.learn_thai_mai_mobile"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.learn_thai_mai_mobile"
+        applicationId = "com.csebranek.learn_thai_mai_mobile"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

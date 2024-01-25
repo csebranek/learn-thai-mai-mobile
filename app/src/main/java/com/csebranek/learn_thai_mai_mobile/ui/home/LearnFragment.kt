@@ -1,4 +1,4 @@
-package com.example.learn_thai_mai_mobile.ui.home
+package com.csebranek.learn_thai_mai_mobile.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
-import com.example.learn_thai_mai_mobile.MainActivity
-import com.example.learn_thai_mai_mobile.databinding.FragmentLearnBinding
+import com.csebranek.learn_thai_mai_mobile.MainActivity
+import com.csebranek.learn_thai_mai_mobile.databinding.FragmentLearnBinding
 
 
 class LearnFragment : Fragment() {

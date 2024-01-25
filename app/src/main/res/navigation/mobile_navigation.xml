@@ -7,20 +7,20 @@
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.learn_thai_mai_mobile.ui.dashboard.SettingsFragment"
+        android:name="com.csebranek.learn_thai_mai_mobile.ui.dashboard.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/navigation_learn"
-        android:name="com.example.learn_thai_mai_mobile.ui.home.LearnFragment"
+        android:name="com.csebranek.learn_thai_mai_mobile.ui.home.LearnFragment"
         android:label="@string/title_learn"
         tools:layout="@layout/fragment_learn" />
 
 
     <fragment
         android:id="@+id/navigation_statistics"
-        android:name="com.example.learn_thai_mai_mobile.ui.notifications.StatisticsFragment"
+        android:name="com.csebranek.learn_thai_mai_mobile.ui.notifications.StatisticsFragment"
         android:label="@string/title_statistics"
         tools:layout="@layout/fragment_statistics" />
 </navigation>

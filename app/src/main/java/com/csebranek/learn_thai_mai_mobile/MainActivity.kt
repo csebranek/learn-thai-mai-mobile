@@ -1,4 +1,4 @@
-package com.example.learn_thai_mai_mobile
+package com.csebranek.learn_thai_mai_mobile
 
 import android.content.Context
 import android.media.MediaPlayer
@@ -13,11 +13,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.learn_thai_mai_mobile.databinding.ActivityMainBinding
+import com.csebranek.learn_thai_mai_mobile.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
-import java.io.File
 import java.io.IOException
 import kotlin.random.Random
 
@@ -88,6 +87,7 @@ class MainActivity : AppCompatActivity() {
         currentWordToTranslate.text = translateBoxLabel.plus(currentWord.english)
         inputTranslationBox = findViewById(R.id.inputTranslationBox)
     }
+
 
 
     fun buttonClick(view: View?) {

@@ -1,4 +1,4 @@
-package com.example.learn_thai_mai_mobile
+package com.csebranek.learn_thai_mai_mobile
 
 import org.junit.Test
 

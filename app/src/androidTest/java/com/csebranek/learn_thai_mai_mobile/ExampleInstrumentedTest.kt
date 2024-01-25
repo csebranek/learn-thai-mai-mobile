@@ -1,4 +1,4 @@
-package com.example.learn_thai_mai_mobile
+package com.csebranek.learn_thai_mai_mobile
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

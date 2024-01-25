@@ -1,13 +1,15 @@
-package com.example.learn_thai_mai_mobile.ui.notifications
+package com.csebranek.learn_thai_mai_mobile.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 
-class StatisticsViewModel : ViewModel() {
+class LearnViewModel(private val state: SavedStateHandle) : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
+
 }

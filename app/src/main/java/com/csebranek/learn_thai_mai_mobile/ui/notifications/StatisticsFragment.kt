@@ -1,4 +1,4 @@
-package com.example.learn_thai_mai_mobile.ui.notifications
+package com.csebranek.learn_thai_mai_mobile.ui.notifications
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.learn_thai_mai_mobile.databinding.FragmentStatisticsBinding
+import com.csebranek.learn_thai_mai_mobile.databinding.FragmentStatisticsBinding
 
 class StatisticsFragment : Fragment() {
 
