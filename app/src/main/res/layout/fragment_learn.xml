@@ -19,48 +19,31 @@
 
     <ImageButton
         android:id="@+id/playThaiSound"
-        android:layout_width="35dp"
-        android:layout_height="34dp"
-        android:layout_marginBottom="5dp"
+        android:layout_width="52dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:onClick="playThaiSound"
         android:src="@android:drawable/ic_lock_silent_mode_off"
-        app:layout_constraintBottom_toTopOf="@+id/inputTranslationBox"
-        app:layout_constraintEnd_toEndOf="@+id/inputTranslationBox" />
+        app:layout_constraintBottom_toTopOf="@+id/submitbutton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/translateTextLabel"
-        android:layout_width="112dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="32dp"
-        android:ems="10"
-        android:inputType="text"
-        android:selectAllOnFocus="false"
-        android:singleLine="false"
-        android:text="@string/translateLabelText"
-        android:textAlignment="center"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/inputTranslationBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="346dp"
+        android:layout_height="56dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
-        android:hint="Enter answer here"
+        android:elevation="1dp"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="@string/text_input_hint"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordToTranslate" />
 
@@ -78,9 +61,21 @@
         android:id="@+id/wordToTranslate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/playThaiSound"
-        app:layout_constraintHorizontal_bias="0.595"
+        android:layout_marginTop="88dp"
+        android:contentDescription="phrase or word to translate"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/translateTextLabel" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Translate the following word/phrase below."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
