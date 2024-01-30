@@ -27,17 +27,12 @@ import kotlin.random.Random
 class MainActivity : AppCompatActivity() {
 
     private lateinit var inputTranslationBox: EditText
-
     private lateinit var currentWordToTranslate: TextView
     private lateinit var translateBoxLabel: String
     private lateinit var appBarConfiguration: AppBarConfiguration
-
     private lateinit var binding: ActivityMainBinding
-
     private var wordDictionary: ArrayList<Word> = ArrayList()
-
     private lateinit var currentWord: Word
-
     private lateinit var homeFrag: Fragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -101,14 +96,16 @@ class MainActivity : AppCompatActivity() {
         val displayText: TextView = findViewById(R.id.SubmissionFeedback)
         var currentDisplay: TextView = findViewById(R.id.wordToTranslate)
         displayText.text =
-            if (currentWord.thai == inputTranslationBox.text.toString()) "Correct Answer!" else "Wrong Answer!".plus(" Answer was: ").plus(currentWord.thai)
+            if (currentWord.thai == inputTranslationBox.text.toString()) getString(R.string.correct_answer) else getString(R.string.wrong_answer).plus(getString(R.string.wrong_answer_fdbk)).plus(currentWord.thai)
         nextWord()
         currentDisplay.text = currentWord.english
     }
 
 
     fun playThaiSound(view: View?) {
-        audioPlayer("sounds/".plus(currentWord.english).plus(".m4a"))
+        //strip question marks
+        var audioPath: String = "sounds/".plus(currentWord.english.plus(".m4a").replace("?", ""));
+        audioPlayer(audioPath);
     }
 
     private fun nextWord() {
@@ -137,6 +134,7 @@ class MainActivity : AppCompatActivity() {
         }
         return jsonString
     }
+
     fun audioPlayer(fileName: String) {
         val mp = MediaPlayer()
         try {

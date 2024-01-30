@@ -21,13 +21,12 @@
         android:id="@+id/playThaiSound"
         android:layout_width="52dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="12dp"
         android:layout_marginBottom="8dp"
         android:onClick="playThaiSound"
         android:src="@android:drawable/ic_lock_silent_mode_off"
         app:layout_constraintBottom_toTopOf="@+id/submitbutton"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
 
     <com.google.android.material.textfield.TextInputEditText
@@ -38,12 +37,12 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:elevation="1dp"
+        android:hint="@string/text_input_hint"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        android:hint="@string/text_input_hint"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordToTranslate" />
 

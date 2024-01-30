@@ -6,6 +6,10 @@
     <string name="button_text">Submit</string>
     <string name="translateLabelText">Translate this:</string>
 
+    <string name="wrong_answer">Wrong answer.</string>
+    <string name="wrong_answer_fdbk">Answer was: </string>
+    <string name="correct_answer">Correct answer!</string>
+
     <string name="menu_settings">Settings</string>
     <string name="menu_learn">Translate</string>
     <string name="menu_statistics">Statistics</string>
