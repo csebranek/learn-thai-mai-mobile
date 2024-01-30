@@ -2,6 +2,6 @@ A basic quiz-based Android application to learn the Thai langauge. Planning to e
 
 Haven't released it to the Play store yet but here's a [working apk](https://chadsebranek.com/files/learn-thai-mai-mobile.apk).
 
-![app screenshot](https://chadsebranek.com/files/thai-app-screenshot-1.png)
+![app screenshot](https://chadsebranek.com/files/thai-app-screenshot.jpg)
 
-![app screenshot 2](https://chadsebranek.com/files/thai-app-screenshot-2.png)
+
